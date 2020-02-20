@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReviewFile", "ReviewFile\Re
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingRadom", "TestingRadom\TestingRadom.csproj", "{71F90A39-2A4E-4F20-91BB-573153E6229F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingThreadPool", "TestingThreadPool\TestingThreadPool.csproj", "{3FAA0DC6-7600-4B3E-8D8F-C014B0A3C110}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{71F90A39-2A4E-4F20-91BB-573153E6229F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71F90A39-2A4E-4F20-91BB-573153E6229F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{71F90A39-2A4E-4F20-91BB-573153E6229F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FAA0DC6-7600-4B3E-8D8F-C014B0A3C110}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FAA0DC6-7600-4B3E-8D8F-C014B0A3C110}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FAA0DC6-7600-4B3E-8D8F-C014B0A3C110}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FAA0DC6-7600-4B3E-8D8F-C014B0A3C110}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
