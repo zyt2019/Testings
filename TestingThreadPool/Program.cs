@@ -33,6 +33,7 @@ namespace TestingThreadPool
             Console.WriteLine("我是主线程，我已经执行完了");
             Console.ReadLine();
             #endregion
+            
         }
         /// <summary>
         /// 在这个方法执行完后把数据拿到
@@ -57,7 +58,7 @@ namespace TestingThreadPool
         {
             Thread.Sleep(5000);
             Console.WriteLine("异步委托的方法所在的线程为：" + Thread.CurrentThread.ManagedThreadId);
-            return (arg1 + arg2).ToString();
+            return (arg1 * arg2).ToString();
         }
     }
 }

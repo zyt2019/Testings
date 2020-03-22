@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingThreadPool", "Testin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LittleGame", "LittleGame\LittleGame.csproj", "{D318EC78-E574-4A5D-A6ED-6947673D042D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sort4", "Sort4\Sort4.csproj", "{9205FC2D-D883-4084-BAFD-DD69931CFFF6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{D318EC78-E574-4A5D-A6ED-6947673D042D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D318EC78-E574-4A5D-A6ED-6947673D042D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D318EC78-E574-4A5D-A6ED-6947673D042D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9205FC2D-D883-4084-BAFD-DD69931CFFF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9205FC2D-D883-4084-BAFD-DD69931CFFF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9205FC2D-D883-4084-BAFD-DD69931CFFF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9205FC2D-D883-4084-BAFD-DD69931CFFF6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

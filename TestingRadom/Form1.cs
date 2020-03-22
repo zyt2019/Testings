@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -12,6 +13,27 @@ namespace TestingRadom
         {
             InitializeComponent();
             random = new Random();
+            BackgroundWorker worker = new BackgroundWorker();
+            worker.WorkerReportsProgress = true;
+            worker.DoWork += Worker_DoWork;
+            worker.ProgressChanged += Worker_ProgressChanged;
+            worker.RunWorkerAsync();
+        }
+
+        private void Worker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            label1.Text = e.ProgressPercentage.ToString();
+        }
+
+        private void Worker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            int i = 0;
+            while (i<100)
+            {
+                (sender as BackgroundWorker).ReportProgress(i);
+                Thread.Sleep(100);
+                i++;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

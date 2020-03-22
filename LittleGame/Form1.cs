@@ -15,17 +15,37 @@ namespace LittleGame
     {
         Status status = new Status();
         private bool Start;
+        private enum MyDifficultEnum
+        {
+            难度1, 难度2, 难度3, 难度4, 难度5, 难度6, 难度7,
+
+        }
+        enum MyEnum
+        {
+            ss
+        }
         public Form1()
         {
             InitializeComponent();
         }
         private Random random;
+        private MyDifficultEnum difficultEnum;
         private void Form1_Load(object sender, EventArgs e)
         {
-            Start = true;
-            random = new Random();
-            timer1.Interval = 800;
-            timer1.Start();
+            FormChooseDiffculty formChoose = new FormChooseDiffculty();
+            if (formChoose.ShowDialog()!=DialogResult.OK)
+            {
+                this.Close();
+            }
+            else
+            {
+                difficultEnum = (MyDifficultEnum)int.Parse(FormChooseDiffculty.choosedifficulty);
+                Start = true;
+                random = new Random();
+                timer1.Interval = 800;
+                timer1.Start();
+            }
+          
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -56,15 +76,42 @@ namespace LittleGame
             {
                 listBox1.Items.Remove(e.KeyCode);
                 listBox1.Refresh();
-                if (timer1.Interval > 400)
+                int winInterval = 100;
+                switch (difficultEnum)
+                {
+                    case MyDifficultEnum.难度1:
+                        winInterval = 500;
+                        break;
+                    case MyDifficultEnum.难度2:
+                        winInterval = 400;
+                        break;
+                    case MyDifficultEnum.难度3:
+                        winInterval = 350;
+                        break;
+                    case MyDifficultEnum.难度4:
+                        winInterval = 250;
+                        break;
+                    case MyDifficultEnum.难度5:
+                        winInterval = 220;
+                        break;
+                    case MyDifficultEnum.难度6:
+                        winInterval = 210;
+                        break;
+                    case MyDifficultEnum.难度7:
+                        winInterval = 200;
+                        break;
+                    default:
+                        break;
+                }
+                if (timer1.Interval > 410)
                 {
                     timer1.Interval -= 10;
                 }
-                else if (timer1.Interval > 250)
+                else if (timer1.Interval > winInterval)
                 {
                     timer1.Interval -= 7;
                 }
-                else if (timer1.Interval<250)
+                else if (timer1.Interval< winInterval)
                 {
                     timer1.Stop();
                     listBox1.Items.Clear();
@@ -91,11 +138,12 @@ namespace LittleGame
 
         private void listBox1_Click(object sender, EventArgs e)
         {
-            //当点击控件而且控件显示GameOver,重新开始游戏 并有3 2 1 倒计时
+            //当点击控件而且控件显示GameOver,重新开始游戏
             if (listBox1.Items.Contains("GameOver"))
             {
                 ShowScore(new Status());
                 Start = true;
+                timer1.Interval = 800;
                 timer1.Start();
             }
         }
